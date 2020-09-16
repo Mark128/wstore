@@ -1,0 +1,7 @@
+{
+  "name": "weedstore",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
