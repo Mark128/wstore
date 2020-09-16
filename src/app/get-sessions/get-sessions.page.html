@@ -1,9 +1,37 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>get-sessions</ion-title>
+    <ion-title>
+      Weed Store
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-list class="ios list-ios hydrated">
+    <ion-list-header class="ios hydrated">
+      Sessions
+    </ion-list-header>
 
+    <ion-item *ngFor="let session of Sessions" class="user-list">
+      <ion-label>
+        <h5>
+          <ion-icon name="calendar"></ion-icon> {{session.date}} - {{session.time}}
+        </h5>
+        <p>
+          <ion-icon name="call"></ion-icon> {{session.strain}}
+        </p>
+        <p>
+          <ion-icon name="call"></ion-icon> {{session.description}}
+        </p>
+      </ion-label>
+      <div class="item-note" item-end>
+        <button ion-button clear [routerLink]="['/add-session/', session.$key]">
+          <ion-icon name="create" style="zoom:2.0"></ion-icon>
+        </button>
+        <button ion-button clear (click)="deleteSession(session.$key)">
+          <ion-icon name="trash" style="zoom:2.0"></ion-icon>
+        </button>
+      </div>
+    </ion-item>
+  </ion-list>
 </ion-content>

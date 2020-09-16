@@ -1,9 +1,28 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>home</ion-title>
+    <ion-title>
+      Weed Store
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12" class="ion-text-center">
+        <button ion-button clear large [routerLink]="['/get-sessions/']">
+          <ion-icon name="flame" style="zoom:2.0"></ion-icon>
+          I Want to Smoke
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12" class="ion-text-center">
+        <button ion-button clear large [routerLink]="['/add-session/']">
+          <ion-icon name="glasses" style="zoom:2.0"></ion-icon>
+          I Smoked
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

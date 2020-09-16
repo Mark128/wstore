@@ -1,38 +1,40 @@
 <ion-header>
-  <ion-toolbar class="ios hydrated">
-    <ion-title class="ios title-ios hydrated">Add Session</ion-title>
+  <ion-toolbar>
+    <ion-title>
+      Edit Session
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list lines="full">
-    <form [formGroup]="sessionForm" (ngSubmit)="formSubmit()">
+    <form [formGroup]="updateSessionForm" (ngSubmit)="updateForm()">
       <ion-item>
-        <ion-label position="stacked">Date</ion-label>
+        <ion-label position="floating">Date</ion-label>
         <ion-input formControlName="date" type="date" required></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label position="stacked">Time</ion-label>
+        <ion-label position="floating">time</ion-label>
         <ion-input formControlName="time" type="time" required>
         </ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label position="stacked">Strain</ion-label>
+        <ion-label position="floating">Strain</ion-label>
         <ion-input formControlName="strain" type="text" required>
         </ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label position="stacked">Description</ion-label>
-        <ion-input formControlName="description" type="text">
+        <ion-label position="floating">Description</ion-label>
+        <ion-input formControlName="description" type="text" required>
         </ion-input>
       </ion-item>
 
       <ion-row>
         <ion-col>
-          <ion-button type="submit" color="primary" shape="full" expand="block">Add Session</ion-button>
+          <ion-button type="submit" color="primary" shape="full" expand="block">Update Session</ion-button>
         </ion-col>
       </ion-row>
     </form>

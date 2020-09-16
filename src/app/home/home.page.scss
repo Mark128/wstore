@@ -1,0 +1,21 @@
+ion-icon {
+    font-size: 50px; //Preferred size here
+}
+
+
+.container-side-menu {
+    width: 10%;
+    top: 15%;
+    right: 15px;
+    position: absolute;
+    margin: auto;
+  }
+  .container-side-menu .button {
+    font-size: 10px;
+    line-height: 10px; // Add
+  }
+  .container-side-menu .button-icon .icon {
+    display: block;
+    font-size: 30px;
+    margin-bottom: 3px !important;
+  }

@@ -4,9 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AddSessionPageRoutingModule } from './add-session-routing.module';
+import { EditSessionPageRoutingModule } from './edit-session-routing.module';
 
-import { AddSessionPage } from './add-session.page';
+import { EditSessionPage } from './edit-session.page';
 
 @NgModule({
   imports: [
@@ -14,8 +14,8 @@ import { AddSessionPage } from './add-session.page';
     ReactiveFormsModule,
     FormsModule,
     IonicModule,
-    AddSessionPageRoutingModule
+    EditSessionPageRoutingModule
   ],
-  declarations: [AddSessionPage]
+  declarations: [EditSessionPage]
 })
-export class AddSessionPageModule {}
+export class EditSessionPageModule {}
