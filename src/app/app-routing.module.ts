@@ -2,15 +2,20 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
   {
-    path: '',
-    redirectTo: 'folder/Inbox',
-    pathMatch: 'full'
+    path: 'make-add-session',
+    loadChildren: () => import('./add-session/add-session.module').then( m => m.AddSessionPageModule)
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
-  }
+    path: 'get-sessions',
+    loadChildren: () => import('./get-sessions/get-sessions.module').then(m => m.GetSessionsPageModule)
+  },
+  // {
+  //   path: 'edit-appointment/:id',
+  //   loadChildren: () => import('./edit-appointment/edit-appointment.module').then( m => m.EditAppointmentPageModule)
+  // },
 ];
 
 @NgModule({
