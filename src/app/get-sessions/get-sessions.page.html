@@ -12,10 +12,10 @@
       Sessions
     </ion-list-header>
 
-    <ion-item *ngFor="let session of Sessions" class="user-list">
+    <ion-item *ngFor="let session of sessions" class="user-list">
       <ion-label>
         <h5>
-          <ion-icon name="calendar"></ion-icon> {{session.date}} - {{session.time}}
+          <ion-icon name="calendar"></ion-icon> {{session.session_datetime  | date: 'MMM d, y, h:mm:ss a'}}
         </h5>
         <p>
           <ion-icon name="call"></ion-icon> {{session.strain}}
@@ -25,10 +25,10 @@
         </p>
       </ion-label>
       <div class="item-note" item-end>
-        <button ion-button clear [routerLink]="['/add-session/', session.$key]">
+        <button ion-button clear [routerLink]="['/edit-session/', session.id]">
           <ion-icon name="create" style="zoom:2.0"></ion-icon>
         </button>
-        <button ion-button clear (click)="deleteSession(session.$key)">
+        <button ion-button clear (click)="deleteSession(session.id)">
           <ion-icon name="trash" style="zoom:2.0"></ion-icon>
         </button>
       </div>

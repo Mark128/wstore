@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Weed Store
+      Budtender
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -10,18 +10,26 @@
   <ion-grid>
     <ion-row class="ion-align-items-center">
       <ion-col size="12" class="ion-text-center">
-        <button ion-button clear large [routerLink]="['/get-sessions/']">
-          <ion-icon name="flame" style="zoom:2.0"></ion-icon>
+        <ion-button expand="block" color="secondary" [routerLink]="['/get-sessions/']">
+          <ion-icon slot="start" name="flame" style="zoom:1.0"></ion-icon>
           I Want to Smoke
-        </button>
+        </ion-button>
       </ion-col>
     </ion-row>
     <ion-row class="ion-align-items-center">
       <ion-col size="12" class="ion-text-center">
-        <button ion-button clear large [routerLink]="['/add-session/']">
-          <ion-icon name="glasses" style="zoom:2.0"></ion-icon>
+        <ion-button expand="block" color="secondary" [routerLink]="['/add-session/']">
+          <ion-icon slot="start" name="glasses" style="zoom:1.0"></ion-icon>
           I Smoked
-        </button>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12" class="ion-text-center">
+        <ion-button expand="block" color="secondary" [routerLink]="['/get-sessions/']">
+          <ion-icon slot="start" name="time-outline" style="zoom:1.0"></ion-icon>
+          View Past Sessions
+        </ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>

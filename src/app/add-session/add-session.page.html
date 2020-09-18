@@ -1,7 +1,11 @@
 <ion-header>
   <ion-toolbar class="ios hydrated">
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
     <ion-title class="ios title-ios hydrated">Add Session</ion-title>
   </ion-toolbar>
+  
 </ion-header>
 
 <ion-content>
@@ -9,14 +13,9 @@
     <form [formGroup]="sessionForm" (ngSubmit)="formSubmit()">
       <ion-item>
         <ion-label position="stacked">Date</ion-label>
-        <ion-input formControlName="date" type="date" required></ion-input>
+        <ion-input formControlName="session_date" type="date" required></ion-input>
       </ion-item>
 
-      <ion-item>
-        <ion-label position="stacked">Time</ion-label>
-        <ion-input formControlName="time" type="time" required>
-        </ion-input>
-      </ion-item>
 
       <ion-item>
         <ion-label position="stacked">Strain</ion-label>

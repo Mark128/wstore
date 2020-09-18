@@ -10,24 +10,18 @@
   <ion-list lines="full">
     <form [formGroup]="updateSessionForm" (ngSubmit)="updateForm()">
       <ion-item>
-        <ion-label position="floating">Date</ion-label>
-        <ion-input formControlName="date" type="date" required></ion-input>
+        <ion-label position="stacked">Date</ion-label>
+        <ion-input formControlName="session_date" type="date" required></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label position="floating">time</ion-label>
-        <ion-input formControlName="time" type="time" required>
-        </ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label position="floating">Strain</ion-label>
+        <ion-label position="stacked">Strain</ion-label>
         <ion-input formControlName="strain" type="text" required>
         </ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label position="floating">Description</ion-label>
+        <ion-label position="stacked">Description</ion-label>
         <ion-input formControlName="description" type="text" required>
         </ion-input>
       </ion-item>

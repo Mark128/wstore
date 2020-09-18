@@ -1,9 +1,6 @@
-import { Time } from '@angular/common';
-
 export class Session {
     $key: string;
     description: string;
-    date: Date;
-    time: Time;
+    session_date: string;
     strain: string;
 }

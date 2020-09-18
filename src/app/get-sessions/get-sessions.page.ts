@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Session } from 'protractor';
+import { Router } from '@angular/router';
 import { SessionService } from '../shared/session.service';
+
 
 @Component({
   selector: 'app-get-sessions',
@@ -9,33 +10,30 @@ import { SessionService } from '../shared/session.service';
 })
 export class GetSessionsPage implements OnInit {
 
-  Sessions = [];
+  sessions: any;
 
-  constructor(private sessionService: SessionService) { }
+  constructor(private sessionService: SessionService, private router: Router) {
+    this.sessions = [];
+   }
 
   ngOnInit() {
-    this.fetchSessions();
-    const sessionRes = this.sessionService.getSessionList();
-    sessionRes.snapshotChanges().subscribe(res => {
-      this.Sessions = [];
-      res.forEach(item => {
-        const s = item.payload.toJSON();
-        s['$key'] = item.key;
-        this.Sessions.push(s as Session);
-      });
+    this.sessionService.getSessionList().subscribe(response => {
+      console.log(response);
+      this.sessions = response;
     });
   }
 
   fetchSessions(){
-    this.sessionService.getSessionList().valueChanges().subscribe(res => {
-      console.log(res);
-    });
+    this.sessionService.getSessionList();
   }
 
-  deleteSessions(id){
+  deleteSession(id){
     console.log(id);
     if (window.confirm('Are you sure you want to delete this session?')){
-      this.sessionService.deleteSession(id);
+      this.sessionService.deleteSession(id).subscribe((response) => {
+        console.log('deleted' + response);
+        this.router.navigate(['/home']);
+      });
     }
   }
 }

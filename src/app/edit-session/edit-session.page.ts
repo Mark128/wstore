@@ -19,26 +19,27 @@ export class EditSessionPage implements OnInit {
     public fb: FormBuilder
   ) {
       this.id = this.actRoute.snapshot.paramMap.get('id');
-      this.sessionService.getSession(this.id).valueChanges().subscribe( res => {
+      this.sessionService.getSession(this.id).subscribe( res => {
         this.updateSessionForm.setValue(res);
       });
   }
 
   ngOnInit() {
     this.updateSessionForm = this.fb.group({
-      date: [''],
-      time: [''],
+      id: [''],
+      user: [''],
+      session_date: [''],
       strain: [''],
-      description: ['']
+      description: [''],
+      updated_on: ['']
     });
-    console.log(this.updateSessionForm.value);
   }
 
   updateForm(){
-    this.sessionService.updateSession(this.id, this.updateSessionForm.value)
-    .then(() => {
+    this.sessionService.updateSession(this.id, this.updateSessionForm.value).subscribe((response) => {
+      console.log(this.updateSessionForm.value);
+      this.updateSessionForm.reset();
       this.router.navigate(['/home']);
-    })
-    .catch(error => console.log(error));
+    });
   }
 }
