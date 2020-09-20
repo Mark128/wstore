@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SessionService } from '../shared/session.service';
+import { WeedService } from '../shared/weed.service';
 
 
 @Component({
@@ -12,7 +13,10 @@ export class GetSessionsPage implements OnInit {
 
   sessions: any;
 
-  constructor(private sessionService: SessionService, private router: Router) {
+  constructor(
+    private sessionService: SessionService,
+    private weedService: WeedService,
+    private router: Router) {
     this.sessions = [];
    }
 
@@ -21,6 +25,7 @@ export class GetSessionsPage implements OnInit {
       console.log(response);
       this.sessions = response;
     });
+
   }
 
   fetchSessions(){

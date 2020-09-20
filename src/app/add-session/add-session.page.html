@@ -19,8 +19,9 @@
 
       <ion-item>
         <ion-label position="stacked">Strain</ion-label>
-        <ion-input formControlName="strain" type="text" required>
-        </ion-input>
+        <ion-select formControlName="strain" placeholder="select strain"> 
+          <ion-select-option *ngFor="let strain of strains" value="{{strain}}">{{strain}}</ion-select-option> 
+        </ion-select>
       </ion-item>
 
       <ion-item>

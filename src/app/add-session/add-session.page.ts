@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SessionService } from '../shared/session.service';
 import { Session } from '../shared/session';
+import { WeedService } from '../shared/weed.service';
 
 @Component({
   selector: 'app-add-session',
@@ -11,20 +12,27 @@ import { Session } from '../shared/session';
 })
 export class AddSessionPage implements OnInit {
   sessionForm: FormGroup;
+  strains: any;
   data: Session;
 
   constructor(
     private sessionService: SessionService,
     private router: Router,
-    public fb: FormBuilder
+    public fb: FormBuilder,
+    private weedService: WeedService
   ){
     this.data = new Session();
    }
 
   ngOnInit() {
+    this.weedService.getAllStrains().subscribe(response => {
+      console.log(response);
+      this.strains = response;
+    });
+
     this.sessionForm = this.fb.group({
       description: [''],
-      session_date: [''], 
+      session_date: [''],
       strain: ['']
     });
   }
