@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { SessionService } from '../shared/session.service';
 import { Session } from '../shared/session';
 import { WeedService } from '../shared/weed.service';
+import { ViewChild } from '@angular/core';
+import { IonSlides } from '@ionic/angular';
 
 @Component({
   selector: 'app-add-session',
@@ -12,6 +14,7 @@ import { WeedService } from '../shared/weed.service';
 })
 export class AddSessionPage implements OnInit {
   sessionForm: FormGroup;
+  @ViewChild(IonSlides) slides: IonSlides;
   strains: any;
   data: Session;
 
@@ -24,12 +27,15 @@ export class AddSessionPage implements OnInit {
     this.data = new Session();
    }
 
-  ngOnInit() {
-    this.weedService.getAllStrains().subscribe(response => {
-      console.log(response);
-      this.strains = response;
-    });
+   ionViewDidEnter() {
+    this.slides.lockSwipes(true);
+  }
 
+  ngOnInit() {
+    // this.weedService.getAllStrains().subscribe(response => {
+    //   console.log(response);
+    //   this.strains = response;
+    // });
     this.sessionForm = this.fb.group({
       description: [''],
       session_date: [''],
@@ -47,5 +53,17 @@ export class AddSessionPage implements OnInit {
         this.router.navigate(['/home']);
       });
     }
+  }
+
+  goToNextSlide() {
+    this.slides.lockSwipes(false);
+    this.slides.slideNext(500);
+    this.slides.lockSwipes(true);
+  }
+
+  goToPreviousSlide() {
+    this.slides.lockSwipes(false);
+    this.slides.slidePrev(500);
+    this.slides.lockSwipes(true);
   }
 }
