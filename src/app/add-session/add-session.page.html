@@ -1,170 +1,69 @@
 <ion-header>
   <ion-toolbar class="ios hydrated">
-      <ion-buttons slot="start">
-        <ion-back-button></ion-back-button>
-      </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
     <ion-title class="ios title-ios hydrated">Add Session</ion-title>
   </ion-toolbar>
-  
+
 </ion-header>
-  <ion-content>
+<ion-content>
+  <ion-card>
     <ion-slides>
       <!-- <form [formGroup]="sessionForm" (ngSubmit)="formSubmit()"> -->
-        <ion-slide> 
-          <ion-list>
-            <ion-list-header>
-              <ion-label>Mood</ion-label>
-            </ion-list-header>
-            <ion-item>
-              <ion-label position="stacked">What was your mood before you smoked?</ion-label>
-              <ion-range min="0" max="10" step="1" ticks="true" snaps="true">
-                <ion-icon slot="start" name="sad-outline"></ion-icon>
-                <ion-icon slot="end" name="happy-outline"></ion-icon>
-              </ion-range>
-            </ion-item>
-            <ion-item>
-              <ion-label position="stacked">How tired were you before you smoked?</ion-label>
-              <ion-range min="0" max="10" step="1" ticks="true" snaps="true">
-                <ion-icon slot="start" name="moon-outline"></ion-icon>
-                <ion-icon slot="end" name="sunny-outline"></ion-icon>
-              </ion-range>
-            </ion-item>
-            <ion-item>
-              <ion-label position="stacked">How stressed were you before you smoked?</ion-label>
-              <ion-range min="0" max="10" step="1" ticks="true" snaps="true">
-                <ion-icon slot="start" name="skull-outline"></ion-icon>
-                <ion-icon slot="end" name="glasses"></ion-icon>
-              </ion-range>
-            </ion-item>
-            <ion-button (click)="goToNextSlide();">Next</ion-button>
-          </ion-list>
-        </ion-slide>
-        <ion-slide>
-          <ion-list>
-            <ion-list-header>
-              <ion-label>Health</ion-label>
-            </ion-list-header>
-            <ion-item>
-              <ion-label position="stacked">How healthy did you eat before smoking?</ion-label>
-              <ion-range min="0" max="10" step="1" ticks="true" snaps="true">
-                <ion-icon slot="start" name="fast-food"></ion-icon>
-                <ion-icon slot="end" name="leaf"></ion-icon>
-              </ion-range>
-            </ion-item>
-            <ion-item>
-              <ion-label position="stacked">How much caffeine did you drink before smoking?</ion-label>
-              <ion-range min="0" max="10" step="1" ticks="true" snaps="true">
-                <ion-icon slot="start" name="cafe-outline"></ion-icon>
-                <ion-icon slot="end" name="cafe"></ion-icon>
-              </ion-range>
-            </ion-item>
-            <ion-item>
-              <ion-label position="stacked">How active were you before you smoked?</ion-label>
-              <ion-range min="0" max="10" step="1" ticks="true" snaps="true">
-                <ion-icon slot="start" name="game-controller-outline"></ion-icon>
-                <ion-icon slot="end" name="barbell-outline"></ion-icon>
-              </ion-range>
-            </ion-item>
-            <ion-button (click)="goToPreviousSlide();">Back</ion-button>
-            <ion-button (click)="goToNextSlide();">Next</ion-button>
-          </ion-list>
-        </ion-slide>
-        <ion-slide>
-          <ion-list>
-            <ion-list-header>
-              <ion-label>Session info</ion-label>
-            </ion-list-header>
-            <ion-item>
-              <ion-label position="stacked">What did you smoke?</ion-label>
-              <ion-select>
-                <ion-select-option value="kush">Kush</ion-select-option>
-              </ion-select>
-            </ion-item>
-            <ion-item>
-              <ion-label position="stacked">How much did you smoke?</ion-label>
-              <ion-input type="number" step=".1"></ion-input>
-            </ion-item>
-            <ion-item>
-             <ion-label position="stacked">How did you smoke it?</ion-label>
-             <ion-select>
-               <ion-select-option value="joint">Joint</ion-select-option>
-             </ion-select>
-            </ion-item>
-            <ion-item>
-              <ion-label position="stacked">When did you smoke?</ion-label>
-              <ion-datetime displayFormat="D MMM YYYY H:mm"></ion-datetime>
-            </ion-item>
-            <ion-button (click)="goToPreviousSlide();">Back</ion-button>
-            <ion-button (click)="goToNextSlide();">Next</ion-button>
-          </ion-list>
-        </ion-slide>
-        <ion-slide>
-          <ion-list>
-            <ion-list-header>
-              <ion-label>How did it make you feel?</ion-label>
-            </ion-list-header>
-            <ion-item>
-              <ion-label position="stacked">Happy</ion-label>
-              <ion-range min="0" max="10" step="1" ticks="true" snaps="true">
-                <ion-label slot="start" name="sad-outline">1</ion-label>
-                <ion-label slot="end" name="happy-outline">10</ion-label>
-              </ion-range>
-            </ion-item>
-            <ion-item>
-              <ion-label position="stacked">Euphoric</ion-label>
-              <ion-range min="0" max="10" step="1" ticks="true" snaps="true">
-                <ion-label slot="start" name="sad-outline">1</ion-label>
-                <ion-label slot="end" name="happy-outline">10</ion-label>
-              </ion-range>
-            </ion-item>
-            <ion-item>
-              <ion-label position="stacked">Energetic</ion-label>
-              <ion-range min="0" max="10" step="1" ticks="true" snaps="true">
-                <ion-label slot="start" name="sad-outline">1</ion-label>
-                <ion-label slot="end" name="happy-outline">10</ion-label>
-              </ion-range>
-            </ion-item>
-            <ion-item>
-              <ion-label position="stacked">Focused</ion-label>
-              <ion-range min="0" max="10" step="1" ticks="true" snaps="true">
-                <ion-label slot="start" name="sad-outline">1</ion-label>
-                <ion-label slot="end" name="happy-outline">10</ion-label>
-              </ion-range>
-            </ion-item>
-           
-            <ion-item>
-              <ion-label position="stacked">Relaxed</ion-label>
-              <ion-range min="0" max="10" step="1" ticks="true" snaps="true">
-                <ion-label slot="start" name="sad-outline">1</ion-label>
-                 <ion-label slot="end" name="happy-outline">10</ion-label>
-              </ion-range>
-            </ion-item>
-            <ion-item>
-                  <ion-label position="stacked">Creative</ion-label>
-                  <ion-range min="0" max="10" step="1" ticks="true" snaps="true">
-                    <ion-label slot="start" name="sad-outline">1</ion-label>
-                    <ion-label slot="end" name="happy-outline">10</ion-label>
-                  </ion-range>
-              </ion-item>
-              <ion-item>
-                  <ion-label position="stacked">Anxious</ion-label>
-                  <ion-range min="0" max="10" step="1" ticks="true" snaps="true">
-                    <ion-label slot="start" name="sad-outline">1</ion-label>
-                    <ion-label slot="end" name="happy-outline">10</ion-label>
-                  </ion-range>
-              </ion-item>
-              <ion-item>
-                <ion-label position="stacked">Pain Relief</ion-label>
-                <ion-range min="0" max="10" step="1" ticks="true" snaps="true">
-                  <ion-label slot="start" name="sad-outline">1</ion-label>
-                  <ion-label slot="end" name="happy-outline">10</ion-label>
-                </ion-range>
-              </ion-item>
-            <ion-button (click)="goToPreviousSlide();">Back</ion-button>
-            <ion-button (click)="goToNextSlide();">Next</ion-button>
-          </ion-list>
-        </ion-slide>
+      <ion-slide>
+        <ion-list>
+          <ion-list-header>
+            <ion-label>Session info</ion-label>
+          </ion-list-header>
+          <ion-item>
+            <ion-label position="stacked">What did you smoke?</ion-label>
+            <ion-select>
+              <ion-select-option value="kush">Kush</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">How did you smoke it?</ion-label>
+            <ion-select>
+              <ion-select-option *ngFor="let m of smokingMethods" value="{{m}}">{{m}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">How much did you smoke?</ion-label>
+            <ion-select>
+              <ion-select-option *ngFor="let a of smokingAmounts | keyvalue"
+                value="{{a.key}}">{{a.value}}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">When did you smoke?</ion-label>
+            <ion-datetime displayFormat="D MMM YYYY H:mm"></ion-datetime>
+          </ion-item>
+          <ion-button (click)="goToNextSlide();">Next</ion-button>
+        </ion-list>
+      </ion-slide>
+      <ion-slide>
+        <ion-row>
+          <ion-col>
+            <div *ngFor="let f of feelings | keyvalue">
+              <ion-button *ngIf="f.value"
+                id="f.key"
+                (click)="toggleFeelingButtons(f.key)"
+                color="secondary">
+                {{f.key}}
+              </ion-button>
+              <ion-button *ngIf="!f.value"
+                id="f.key"
+                (click)="toggleFeelingButtons(f.key)"
+                color="primary">
+                {{f.key}}
+              </ion-button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-slide>
       <!-- </form> -->
     </ion-slides>
-  </ion-content>
-
+  </ion-card>
+</ion-content>

@@ -18,6 +18,38 @@ export class AddSessionPage implements OnInit {
   strains: any;
   data: Session;
 
+  smokingMethods = [
+    'Joint',
+    'Blunt',
+    'Bong',
+    'Pipe',
+    'Dab'
+  ];
+
+  smokingAmounts = {
+    one: 'One Hit',
+    couple: 'A Couple Hits',
+    alot: 'Alot of Hits',
+    too_many: 'Too Many Hits'
+  };
+
+  feelings = {
+    'Happy': false,
+    'Euphoric': false,
+    'Relaxed': false,
+    'Uplifted': false,
+    'Creative': false,
+    'Stressed': false,
+    'Anxious': false,
+    'Depressed': false,
+    'Insomnia': false,
+    'Pain Relief': false,
+    'Dry Mouth': false,
+    'Dry Eyes': false,
+    'Paranoid': false,
+    'Sleepy': false
+  };
+
   constructor(
     private sessionService: SessionService,
     private router: Router,
@@ -32,10 +64,6 @@ export class AddSessionPage implements OnInit {
   }
 
   ngOnInit() {
-    // this.weedService.getAllStrains().subscribe(response => {
-    //   console.log(response);
-    //   this.strains = response;
-    // });
     this.sessionForm = this.fb.group({
       description: [''],
       session_date: [''],
@@ -65,5 +93,10 @@ export class AddSessionPage implements OnInit {
     this.slides.lockSwipes(false);
     this.slides.slidePrev(500);
     this.slides.lockSwipes(true);
+  }
+
+  toggleFeelingButtons(feeling){
+    this.feelings[feeling] = !this.feelings[feeling];
+    return this.feelings[feeling];
   }
 }
